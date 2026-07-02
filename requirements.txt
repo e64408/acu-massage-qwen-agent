@@ -1,3 +1,5 @@
 flask==2.2.5
 dashscope==1.16.0
 pillow==9.5.0
+uvicorn
+fastapi
