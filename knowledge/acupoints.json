@@ -1,0 +1,803 @@
+[
+    {
+        "name": "百会",
+        "location": "头顶正中，两耳尖连线中点",
+        "effect": "头痛头晕、失眠健忘、中气下陷、脱肛",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.05, "y_max": 0.12},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "失眠健忘"]
+    },
+    {
+        "name": "太阳",
+        "location": "眉梢与目外眦之间向后凹陷处",
+        "effect": "偏头痛、目赤肿痛、眼疲劳、面瘫",
+        "coord_range": {"x_min": 0.28, "x_max": 0.36, "y_min": 0.12, "y_max": 0.20},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "眼疲劳"]
+    },
+    {
+        "name": "印堂",
+        "location": "两眉头连线中点",
+        "effect": "头痛鼻塞、失眠多梦、眉棱骨痛",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.14, "y_max": 0.20},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "失眠健忘"]
+    },
+    {
+        "name": "人中",
+        "location": "人中沟上1/3与下2/3交界处",
+        "effect": "昏迷晕厥、中暑、癫狂、腰脊强痛",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.22, "y_max": 0.28},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["急救", "昏迷"]
+    },
+    {
+        "name": "颊车",
+        "location": "下颌角前上方一横指，咀嚼时肌肉隆起处",
+        "effect": "牙痛、面肿、口眼歪斜、咬肌痉挛",
+        "coord_range": {"x_min": 0.30, "x_max": 0.38, "y_min": 0.26, "y_max": 0.34},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["牙痛", "面瘫"]
+    },
+    {
+        "name": "下关",
+        "location": "耳前方，颧弓下缘凹陷处",
+        "effect": "牙痛、耳鸣耳聋、面瘫、三叉神经痛",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.22, "y_max": 0.28},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["牙痛", "耳鸣"]
+    },
+    {
+        "name": "睛明",
+        "location": "目内眦角稍上方凹陷处",
+        "effect": "目赤肿痛、近视、夜盲、眼疲劳",
+        "coord_range": {"x_min": 0.42, "x_max": 0.48, "y_min": 0.16, "y_max": 0.22},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["眼疲劳", "近视"]
+    },
+    {
+        "name": "攒竹",
+        "location": "眉头凹陷中，眶上切迹处",
+        "effect": "头痛、眉棱骨痛、视物不清、呃逆",
+        "coord_range": {"x_min": 0.40, "x_max": 0.46, "y_min": 0.14, "y_max": 0.18},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "眼疲劳"]
+    },
+    {
+        "name": "风池",
+        "location": "后颈凹陷处，胸锁乳突肌与斜方肌之间",
+        "effect": "晨起落枕、颈部僵硬、肩颈发紧、感冒头痛",
+        "coord_range": {"x_min": 0.40, "x_max": 0.48, "y_min": 0.10, "y_max": 0.18},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛"]
+    },
+    {
+        "name": "大椎",
+        "location": "后正中线上，第7颈椎棘突下凹陷中",
+        "effect": "感冒发热、颈项强痛、咳嗽气喘、热病",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.18, "y_max": 0.24},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["感冒发热", "肩周酸痛"]
+    },
+    {
+        "name": "天柱",
+        "location": "后发际正中旁开1.3寸，斜方肌外缘凹陷中",
+        "effect": "后头痛、项强、肩背痛、鼻塞",
+        "coord_range": {"x_min": 0.38, "x_max": 0.46, "y_min": 0.12, "y_max": 0.20},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "头痛头晕"]
+    },
+    {
+        "name": "肩井",
+        "location": "肩部最高点，大椎与肩峰端连线中点",
+        "effect": "落枕、肩颈僵硬、肩周酸胀劳损、乳腺炎",
+        "coord_range": {"x_min": 0.32, "x_max": 0.42, "y_min": 0.20, "y_max": 0.32},
+        "taboo": "孕妇禁用",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛"]
+    },
+    {
+        "name": "合谷",
+        "location": "手背虎口，第1、2掌骨间",
+        "effect": "僵硬落枕、肩周酸痛、上肢酸胀疲劳、头痛牙痛",
+        "coord_range": {"x_min": 0.72, "x_max": 0.82, "y_min": 0.22, "y_max": 0.35},
+        "taboo": "孕妇禁用",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛"]
+    },
+    {
+        "name": "内关",
+        "location": "腕横纹上方2寸，掌长肌腱与桡侧腕屈肌腱之间",
+        "effect": "肩颈僵硬、肢体酸胀、疲劳僵硬、胸闷心慌",
+        "coord_range": {"x_min": 0.70, "x_max": 0.80, "y_min": 0.30, "y_max": 0.45},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛"]
+    },
+    {
+        "name": "曲池",
+        "location": "肘横纹外侧端，屈肘时尺泽与肱骨外上髁连线中点",
+        "effect": "手臂痹痛、上肢不遂、热病、高血压、湿疹",
+        "coord_range": {"x_min": 0.68, "x_max": 0.78, "y_min": 0.38, "y_max": 0.48},
+        "taboo": "无禁忌",
+        "body_part": "上肢",
+        "symptom": ["手臂疼痛", "高血压"]
+    },
+    {
+        "name": "外关",
+        "location": "腕背横纹上2寸，尺骨与桡骨之间",
+        "effect": "热病、头痛、耳鸣、上肢痹痛、胁肋痛",
+        "coord_range": {"x_min": 0.72, "x_max": 0.82, "y_min": 0.36, "y_max": 0.46},
+        "taboo": "无禁忌",
+        "body_part": "上肢",
+        "symptom": ["手臂疼痛", "头痛头晕"]
+    },
+    {
+        "name": "列缺",
+        "location": "桡骨茎突上方，腕横纹上1.5寸",
+        "effect": "咳嗽气喘、头痛项强、口眼歪斜、牙痛",
+        "coord_range": {"x_min": 0.66, "x_max": 0.76, "y_min": 0.32, "y_max": 0.42},
+        "taboo": "无禁忌",
+        "body_part": "上肢",
+        "symptom": ["感冒咳嗽", "头痛头晕"]
+    },
+    {
+        "name": "尺泽",
+        "location": "肘横纹中，肱二头肌腱桡侧凹陷处",
+        "effect": "咳嗽气喘、咳血、咽喉肿痛、肘臂挛痛",
+        "coord_range": {"x_min": 0.64, "x_max": 0.74, "y_min": 0.36, "y_max": 0.46},
+        "taboo": "无禁忌",
+        "body_part": "上肢",
+        "symptom": ["感冒咳嗽", "手臂疼痛"]
+    },
+    {
+        "name": "手三里",
+        "location": "前臂背面桡侧，阳溪与曲池连线上，肘横纹下2寸",
+        "effect": "手臂无力、上肢不遂、腹痛腹泻、牙痛",
+        "coord_range": {"x_min": 0.66, "x_max": 0.76, "y_min": 0.42, "y_max": 0.52},
+        "taboo": "无禁忌",
+        "body_part": "上肢",
+        "symptom": ["手臂疼痛", "消化不良"]
+    },
+    {
+        "name": "劳宫",
+        "location": "手掌心，第2、3掌骨之间偏于第3掌骨",
+        "effect": "心痛、呕吐、癫狂痫、口疮、口臭",
+        "coord_range": {"x_min": 0.74, "x_max": 0.84, "y_min": 0.40, "y_max": 0.52},
+        "taboo": "无禁忌",
+        "body_part": "上肢",
+        "symptom": ["失眠健忘", "口疮口臭"]
+    },
+    {
+        "name": "肺俞",
+        "location": "第3胸椎棘突下，旁开1.5寸",
+        "effect": "咳嗽气喘、胸闷、鼻塞、皮肤瘙痒",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.26, "y_max": 0.34},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["感冒咳嗽", "哮喘"]
+    },
+    {
+        "name": "心俞",
+        "location": "第5胸椎棘突下，旁开1.5寸",
+        "effect": "心悸心慌、失眠健忘、心痛、咳嗽吐血",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.32, "y_max": 0.40},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["失眠健忘", "心悸心慌"]
+    },
+    {
+        "name": "肝俞",
+        "location": "第9胸椎棘突下，旁开1.5寸",
+        "effect": "胁痛、黄疸、目赤、眩晕、癫狂痫",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.40, "y_max": 0.48},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["头痛头晕", "胁痛"]
+    },
+    {
+        "name": "脾俞",
+        "location": "第11胸椎棘突下，旁开1.5寸",
+        "effect": "腹胀腹泻、消化不良、水肿、背痛",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.44, "y_max": 0.52},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["消化不良", "胃胀胃痛"]
+    },
+    {
+        "name": "肾俞",
+        "location": "第2腰椎棘突下，旁开1.5寸，后腰两侧",
+        "effect": "久坐僵硬、腰部酸胀、腰肌劳损、遗精阳痿",
+        "coord_range": {"x_min": 0.36, "x_max": 0.44, "y_min": 0.38, "y_max": 0.50},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "腰肌酸痛"]
+    },
+    {
+        "name": "命门",
+        "location": "后正中线上，第2腰椎棘突下凹陷中",
+        "effect": "腰脊强痛、遗精阳痿、月经不调、泄泻",
+        "coord_range": {"x_min": 0.40, "x_max": 0.46, "y_min": 0.42, "y_max": 0.50},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["腰肌酸痛", "肾虚腰痛"]
+    },
+    {
+        "name": "委中",
+        "location": "腘窝横纹中点，腰背核心穴位",
+        "effect": "久坐僵硬、腰肌酸痛、腰背劳损、下肢痿痹",
+        "coord_range": {"x_min": 0.22, "x_max": 0.32, "y_min": 0.70, "y_max": 0.85},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "腰肌酸痛"]
+    },
+    {
+        "name": "腰阳关",
+        "location": "后正中线上，第4腰椎棘突下凹陷中",
+        "effect": "久坐腰背发僵、腰部寒凉酸痛、月经不调",
+        "coord_range": {"x_min": 0.40, "x_max": 0.42, "y_min": 0.42, "y_max": 0.54},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "腰肌酸痛"]
+    },
+    {
+        "name": "天宗",
+        "location": "肩胛冈下窝中央凹陷处",
+        "effect": "肩胛疼痛、肩背部损伤、气喘、乳痈",
+        "coord_range": {"x_min": 0.30, "x_max": 0.40, "y_min": 0.30, "y_max": 0.40},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["肩周酸痛", "久坐僵硬"]
+    },
+    {
+        "name": "膻中",
+        "location": "前正中线上，两乳头连线中点",
+        "effect": "胸闷气短、咳喘、心悸、乳少、呕吐",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.30, "y_max": 0.38},
+        "taboo": "无禁忌",
+        "body_part": "胸腹",
+        "symptom": ["胸闷心慌", "咳嗽气喘"]
+    },
+    {
+        "name": "中脘",
+        "location": "前正中线上，脐上4寸，上腹正中",
+        "effect": "胃胀胃痛、积食不化、脾胃虚弱、呕吐泄泻",
+        "coord_range": {"x_min": 0.40, "x_max": 0.48, "y_min": 0.28, "y_max": 0.38},
+        "taboo": "无禁忌",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "神阙",
+        "location": "脐中央，肚脐正中",
+        "effect": "腹痛泄泻、虚脱、水肿、小便不利",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.42, "y_max": 0.50},
+        "taboo": "禁针，宜灸",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "关元",
+        "location": "前正中线上，脐下3寸",
+        "effect": "遗精阳痿、月经不调、遗尿、虚劳冷惫",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.50, "y_max": 0.58},
+        "taboo": "孕妇禁用",
+        "body_part": "胸腹",
+        "symptom": ["肾虚腰痛", "月经不调"]
+    },
+    {
+        "name": "气海",
+        "location": "前正中线上，脐下1.5寸",
+        "effect": "虚脱乏力、腹痛泄泻、遗尿、遗精",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.46, "y_max": 0.54},
+        "taboo": "孕妇禁用",
+        "body_part": "胸腹",
+        "symptom": ["疲劳乏力", "消化不良"]
+    },
+    {
+        "name": "天枢",
+        "location": "脐中旁开2寸",
+        "effect": "腹胀便秘、腹泻、月经不调、水肿",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.42, "y_max": 0.50},
+        "taboo": "孕妇慎用",
+        "body_part": "脾胃",
+        "symptom": ["便秘", "消化不良"]
+    },
+    {
+        "name": "足三里",
+        "location": "小腿外侧，犊鼻下3寸，胫骨前嵴外一横指",
+        "effect": "脾胃虚弱、胃胀胃痛、消化不良、下肢痿痹",
+        "coord_range": {"x_min": 0.20, "x_max": 0.30, "y_min": 0.55, "y_max": 0.70},
+        "taboo": "无禁忌",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "三阴交",
+        "location": "小腿内侧，内踝尖上3寸，胫骨内侧缘后方",
+        "effect": "体虚乏力、脾胃失调、饭后腹胀、月经不调",
+        "coord_range": {"x_min": 0.18, "x_max": 0.28, "y_min": 0.60, "y_max": 0.75},
+        "taboo": "孕妇禁用",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "阳陵泉",
+        "location": "小腿外侧，腓骨头前下方凹陷处",
+        "effect": "胁痛口苦、下肢痿痹、膝肿痛、黄疸",
+        "coord_range": {"x_min": 0.24, "x_max": 0.34, "y_min": 0.58, "y_max": 0.70},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["膝痛", "胁痛"]
+    },
+    {
+        "name": "血海",
+        "location": "大腿内侧，髌底内侧端上2寸",
+        "effect": "月经不调、痛经、湿疹、丹毒",
+        "coord_range": {"x_min": 0.22, "x_max": 0.32, "y_min": 0.50, "y_max": 0.62},
+        "taboo": "孕妇禁用",
+        "body_part": "下肢",
+        "symptom": ["月经不调", "皮肤瘙痒"]
+    },
+    {
+        "name": "梁丘",
+        "location": "大腿前面，髂前上棘与髌底外侧端连线上，髌底上2寸",
+        "effect": "膝肿痛、下肢不遂、胃痛、乳痈",
+        "coord_range": {"x_min": 0.26, "x_max": 0.36, "y_min": 0.50, "y_max": 0.62},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["膝痛", "胃胀胃痛"]
+    },
+    {
+        "name": "丰隆",
+        "location": "小腿前外侧，外踝尖上8寸，条口外距胫骨前缘二横指",
+        "effect": "头痛眩晕、痰多咳嗽、呕吐、下肢痿痹",
+        "coord_range": {"x_min": 0.22, "x_max": 0.32, "y_min": 0.68, "y_max": 0.80},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["头痛头晕", "感冒咳嗽"]
+    },
+    {
+        "name": "太冲",
+        "location": "足背侧，第1、2跖骨结合部之前凹陷处",
+        "effect": "头痛眩晕、胁痛、月经不调、高血压",
+        "coord_range": {"x_min": 0.44, "x_max": 0.52, "y_min": 0.88, "y_max": 0.96},
+        "taboo": "孕妇禁用",
+        "body_part": "下肢",
+        "symptom": ["头痛头晕", "高血压"]
+    },
+    {
+        "name": "涌泉",
+        "location": "足底前1/3凹陷处，足跖屈时呈凹陷处",
+        "effect": "失眠、乏力、腰膝酸软、上火、头痛",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.92, "y_max": 1.00},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["失眠健忘", "疲劳乏力"]
+    },
+    {
+        "name": "太溪",
+        "location": "足内侧，内踝后方与脚跟骨筋腱之间的凹陷处",
+        "effect": "头痛目眩、咽喉肿痛、耳鸣、肾虚腰痛",
+        "coord_range": {"x_min": 0.38, "x_max": 0.46, "y_min": 0.86, "y_max": 0.94},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["肾虚腰痛", "耳鸣"]
+    },
+    {
+        "name": "阴陵泉",
+        "location": "小腿内侧，胫骨内侧髁下方凹陷处",
+        "effect": "腹胀泄泻、水肿、小便不利、膝痛",
+        "coord_range": {"x_min": 0.20, "x_max": 0.30, "y_min": 0.62, "y_max": 0.74},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["水肿", "消化不良"]
+    },
+    {
+        "name": "承山",
+        "location": "小腿后面正中，委中与昆仑之间，伸直小腿时呈尖角凹陷处",
+        "effect": "腰背痛、腿痛转筋、痔疾、便秘",
+        "coord_range": {"x_min": 0.40, "x_max": 0.48, "y_min": 0.76, "y_max": 0.88},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["腰肌酸痛", "便秘"]
+    },
+    {
+        "name": "公孙",
+        "location": "足内侧缘，第1跖骨基底部的前下方赤白肉际处",
+        "effect": "餐后消化不良、胃部隐痛、脾胃不和、腹痛泄泻",
+        "coord_range": {"x_min": 0.12, "x_max": 0.20, "y_min": 0.80, "y_max": 0.92},
+        "taboo": "无禁忌",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "大椎",
+        "location": "后正中线上，第7颈椎棘突下凹陷中",
+        "effect": "感冒发热、颈项强痛、肩背僵硬、热病",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.05, "y_max": 0.10},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛", "久坐僵硬"]
+    },
+    {
+        "name": "肩井",
+        "location": "大椎与肩峰端连线的中点，肩部最高点",
+        "effect": "落枕、肩颈僵硬、肩周酸胀劳损、乳腺炎",
+        "coord_range": {"x_min": 0.20, "x_max": 0.30, "y_min": 0.22, "y_max": 0.30},
+        "taboo": "孕妇禁用",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛", "久坐僵硬"]
+    },
+    {
+        "name": "天宗",
+        "location": "肩胛冈下窝中央凹陷处",
+        "effect": "肩胛疼痛、肩背部损伤、气喘、乳痈",
+        "coord_range": {"x_min": 0.25, "x_max": 0.35, "y_min": 0.37, "y_max": 0.45},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛", "久坐僵硬"]
+    },
+    {
+        "name": "风池",
+        "location": "后颈凹陷处，胸锁乳突肌与斜方肌之间",
+        "effect": "晨起落枕、颈部僵硬、肩颈发紧、感冒头痛",
+        "coord_range": {"x_min": 0.42, "x_max": 0.48, "y_min": 0.02, "y_max": 0.07},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛"]
+    },
+    {
+        "name": "天柱",
+        "location": "后发际正中旁开1.3寸，斜方肌外缘凹陷中",
+        "effect": "后头痛、项强、肩背痛、鼻塞",
+        "coord_range": {"x_min": 0.38, "x_max": 0.44, "y_min": 0.09, "y_max": 0.15},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "头痛头晕"]
+    },
+    {
+        "name": "合谷",
+        "location": "手背虎口，第1、2掌骨间",
+        "effect": "僵硬落枕、肩周酸痛、上肢酸胀疲劳、头痛牙痛",
+        "coord_range": {"x_min": 0.72, "x_max": 0.82, "y_min": 0.22, "y_max": 0.35},
+        "taboo": "孕妇禁用",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛"]
+    },
+    {
+        "name": "内关",
+        "location": "腕横纹上方2寸，掌长肌腱与桡侧腕屈肌腱之间",
+        "effect": "肩颈僵硬、肢体酸胀、疲劳僵硬、胸闷心慌",
+        "coord_range": {"x_min": 0.70, "x_max": 0.80, "y_min": 0.30, "y_max": 0.45},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["僵硬落枕", "肩周酸痛", "胸闷心慌"]
+    },
+    {
+        "name": "曲池",
+        "location": "肘横纹外侧端，屈肘时尺泽与肱骨外上髁连线中点",
+        "effect": "手臂痹痛、上肢不遂、热病、高血压、湿疹",
+        "coord_range": {"x_min": 0.68, "x_max": 0.78, "y_min": 0.38, "y_max": 0.48},
+        "taboo": "无禁忌",
+        "body_part": "肩颈",
+        "symptom": ["肩周酸痛", "高血压"]
+    },
+    {
+        "name": "肺俞",
+        "location": "第3胸椎棘突下，旁开1.5寸",
+        "effect": "咳嗽气喘、胸闷、鼻塞、皮肤瘙痒、背部僵硬",
+        "coord_range": {"x_min": 0.32, "x_max": 0.40, "y_min": 0.50, "y_max": 0.57},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "感冒咳嗽"]
+    },
+    {
+        "name": "心俞",
+        "location": "第5胸椎棘突下，旁开1.5寸",
+        "effect": "心悸心慌、失眠健忘、心痛、咳嗽吐血",
+        "coord_range": {"x_min": 0.33, "x_max": 0.41, "y_min": 0.55, "y_max": 0.62},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["失眠健忘", "心悸心慌"]
+    },
+    {
+        "name": "肝俞",
+        "location": "第9胸椎棘突下，旁开1.5寸",
+        "effect": "胁痛、黄疸、目赤、眩晕、癫狂痫",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.60, "y_max": 0.67},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["头痛头晕", "胁痛"]
+    },
+    {
+        "name": "脾俞",
+        "location": "第11胸椎棘突下，旁开1.5寸",
+        "effect": "腹胀腹泻、消化不良、水肿、背痛",
+        "coord_range": {"x_min": 0.35, "x_max": 0.43, "y_min": 0.65, "y_max": 0.72},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["消化不良", "胃胀胃痛"]
+    },
+    {
+        "name": "肾俞",
+        "location": "第2腰椎棘突下，旁开1.5寸，后腰两侧",
+        "effect": "久坐僵硬、腰部酸胀、腰肌劳损、遗精阳痿",
+        "coord_range": {"x_min": 0.36, "x_max": 0.44, "y_min": 0.68, "y_max": 0.75},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "腰肌酸痛", "肾虚腰痛"]
+    },
+    {
+        "name": "命门",
+        "location": "后正中线上，第2腰椎棘突下凹陷中",
+        "effect": "腰脊强痛、遗精阳痿、月经不调、泄泻",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.68, "y_max": 0.75},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["腰肌酸痛", "肾虚腰痛"]
+    },
+    {
+        "name": "腰阳关",
+        "location": "后正中线上，第4腰椎棘突下凹陷中",
+        "effect": "久坐腰背发僵、腰部寒凉酸痛、月经不调",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.78, "y_max": 0.85},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "腰肌酸痛"]
+    },
+    {
+        "name": "委中",
+        "location": "腘窝横纹中点，腰背核心穴位",
+        "effect": "久坐僵硬、腰肌酸痛、腰背劳损、下肢痿痹",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.92, "y_max": 0.98},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "腰肌酸痛"]
+    },
+    {
+        "name": "膏肓",
+        "location": "第4胸椎棘突下，旁开3寸",
+        "effect": "肩背沉重、久坐僵硬、疲劳乏力、虚劳咳嗽",
+        "coord_range": {"x_min": 0.28, "x_max": 0.36, "y_min": 0.52, "y_max": 0.59},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["久坐僵硬", "疲劳乏力"]
+    },
+    {
+        "name": "承山",
+        "location": "小腿后面正中，委中与昆仑之间，伸直小腿时呈尖角凹陷处",
+        "effect": "腰背痛、腿痛转筋、痔疾、便秘",
+        "coord_range": {"x_min": 0.45, "x_max": 0.55, "y_min": 1.05, "y_max": 1.12},
+        "taboo": "无禁忌",
+        "body_part": "腰背",
+        "symptom": ["腰肌酸痛", "便秘"]
+    },
+    {
+        "name": "中脘",
+        "location": "前正中线上，脐上4寸，上腹正中",
+        "effect": "胃胀胃痛、积食不化、脾胃虚弱、呕吐泄泻",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 0.45, "y_max": 0.52},
+        "taboo": "无禁忌",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "神阙",
+        "location": "脐中央，肚脐正中",
+        "effect": "腹痛泄泻、虚脱、水肿、小便不利",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.58, "y_max": 0.64},
+        "taboo": "禁针，宜灸",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "天枢",
+        "location": "脐中旁开2寸",
+        "effect": "腹胀便秘、腹泻、月经不调、水肿",
+        "coord_range": {"x_min": 0.35, "x_max": 0.43, "y_min": 0.58, "y_max": 0.64},
+        "taboo": "孕妇慎用",
+        "body_part": "脾胃",
+        "symptom": ["便秘", "消化不良", "胃胀胃痛"]
+    },
+    {
+        "name": "气海",
+        "location": "前正中线上，脐下1.5寸",
+        "effect": "虚脱乏力、腹痛泄泻、遗尿、遗精",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.66, "y_max": 0.72},
+        "taboo": "孕妇禁用",
+        "body_part": "脾胃",
+        "symptom": ["消化不良", "疲劳乏力"]
+    },
+    {
+        "name": "关元",
+        "location": "前正中线上，脐下3寸",
+        "effect": "遗精阳痿、月经不调、遗尿、虚劳冷惫",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.73, "y_max": 0.79},
+        "taboo": "孕妇禁用",
+        "body_part": "胸腹",
+        "symptom": ["肾虚腰痛", "月经不调", "疲劳乏力"]
+    },
+    {
+        "name": "足三里",
+        "location": "小腿外侧，犊鼻下3寸，胫骨前嵴外一横指",
+        "effect": "脾胃虚弱、胃胀胃痛、消化不良、下肢痿痹",
+        "coord_range": {"x_min": 0.20, "x_max": 0.30, "y_min": 0.75, "y_max": 0.82},
+        "taboo": "无禁忌",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良", "膝痛"]
+    },
+    {
+        "name": "三阴交",
+        "location": "小腿内侧，内踝尖上3寸，胫骨内侧缘后方",
+        "effect": "体虚乏力、脾胃失调、饭后腹胀、月经不调",
+        "coord_range": {"x_min": 0.18, "x_max": 0.28, "y_min": 0.85, "y_max": 0.92},
+        "taboo": "孕妇禁用",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良", "月经不调", "失眠健忘"]
+    },
+    {
+        "name": "公孙",
+        "location": "足内侧缘，第1跖骨基底部的前下方赤白肉际处",
+        "effect": "餐后消化不良、胃部隐痛、脾胃不和、腹痛泄泻",
+        "coord_range": {"x_min": 0.12, "x_max": 0.20, "y_min": 0.90, "y_max": 0.97},
+        "taboo": "无禁忌",
+        "body_part": "脾胃",
+        "symptom": ["胃胀胃痛", "消化不良"]
+    },
+    {
+        "name": "阳陵泉",
+        "location": "小腿外侧，腓骨头前下方凹陷处",
+        "effect": "胁痛口苦、下肢痿痹、膝肿痛、黄疸",
+        "coord_range": {"x_min": 0.22, "x_max": 0.32, "y_min": 0.72, "y_max": 0.79},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["膝痛", "胁痛"]
+    },
+    {
+        "name": "血海",
+        "location": "大腿内侧，髌底内侧端上2寸",
+        "effect": "月经不调、痛经、湿疹、丹毒",
+        "coord_range": {"x_min": 0.20, "x_max": 0.30, "y_min": 0.65, "y_max": 0.72},
+        "taboo": "孕妇禁用",
+        "body_part": "下肢",
+        "symptom": ["月经不调", "皮肤瘙痒"]
+    },
+    {
+        "name": "梁丘",
+        "location": "大腿前面，髂前上棘与髌底外侧端连线上，髌底上2寸",
+        "effect": "膝肿痛、下肢不遂、胃痛、乳痈",
+        "coord_range": {"x_min": 0.24, "x_max": 0.34, "y_min": 0.63, "y_max": 0.70},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["膝痛", "胃胀胃痛"]
+    },
+    {
+        "name": "丰隆",
+        "location": "小腿前外侧，外踝尖上8寸，条口外距胫骨前缘二横指",
+        "effect": "头痛眩晕、痰多咳嗽、呕吐、下肢痿痹",
+        "coord_range": {"x_min": 0.21, "x_max": 0.31, "y_min": 0.80, "y_max": 0.87},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["头痛头晕", "感冒咳嗽"]
+    },
+    {
+        "name": "太冲",
+        "location": "足背侧，第1、2跖骨结合部之前凹陷处",
+        "effect": "头痛眩晕、胁痛、月经不调、高血压",
+        "coord_range": {"x_min": 0.44, "x_max": 0.52, "y_min": 0.93, "y_max": 0.99},
+        "taboo": "孕妇禁用",
+        "body_part": "下肢",
+        "symptom": ["头痛头晕", "高血压", "胁痛"]
+    },
+    {
+        "name": "涌泉",
+        "location": "足底前1/3凹陷处，足跖屈时呈凹陷处",
+        "effect": "失眠、乏力、腰膝酸软、上火、头痛",
+        "coord_range": {"x_min": 0.46, "x_max": 0.54, "y_min": 1.10, "y_max": 1.18},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["失眠健忘", "疲劳乏力"]
+    },
+    {
+        "name": "太溪",
+        "location": "足内侧，内踝后方与脚跟骨筋腱之间的凹陷处",
+        "effect": "头痛目眩、咽喉肿痛、耳鸣、肾虚腰痛",
+        "coord_range": {"x_min": 0.38, "x_max": 0.46, "y_min": 0.92, "y_max": 0.98},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["肾虚腰痛", "耳鸣"]
+    },
+    {
+        "name": "阴陵泉",
+        "location": "小腿内侧，胫骨内侧髁下方凹陷处",
+        "effect": "腹胀泄泻、水肿、小便不利、膝痛",
+        "coord_range": {"x_min": 0.19, "x_max": 0.29, "y_min": 0.78, "y_max": 0.85},
+        "taboo": "无禁忌",
+        "body_part": "下肢",
+        "symptom": ["水肿", "消化不良", "膝痛"]
+    },
+    {
+        "name": "百会",
+        "location": "头顶正中，两耳尖连线中点",
+        "effect": "头痛头晕、失眠健忘、中气下陷、脱肛",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.00, "y_max": 0.04},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "失眠健忘", "高血压"]
+    },
+    {
+        "name": "太阳",
+        "location": "眉梢与目外眦之间向后凹陷处",
+        "effect": "偏头痛、目赤肿痛、眼疲劳、面瘫",
+        "coord_range": {"x_min": 0.28, "x_max": 0.36, "y_min": 0.08, "y_max": 0.14},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "眼疲劳"]
+    },
+    {
+        "name": "印堂",
+        "location": "两眉头连线中点",
+        "effect": "头痛鼻塞、失眠多梦、眉棱骨痛",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.10, "y_max": 0.15},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "失眠健忘"]
+    },
+    {
+        "name": "睛明",
+        "location": "目内眦角稍上方凹陷处",
+        "effect": "目赤肿痛、近视、夜盲、眼疲劳",
+        "coord_range": {"x_min": 0.42, "x_max": 0.48, "y_min": 0.12, "y_max": 0.17},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["眼疲劳", "近视"]
+    },
+    {
+        "name": "攒竹",
+        "location": "眉头凹陷中，眶上切迹处",
+        "effect": "头痛、眉棱骨痛、视物不清、呃逆",
+        "coord_range": {"x_min": 0.40, "x_max": 0.46, "y_min": 0.10, "y_max": 0.14},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["头痛头晕", "眼疲劳"]
+    },
+    {
+        "name": "颊车",
+        "location": "下颌角前上方一横指，咀嚼时肌肉隆起处",
+        "effect": "牙痛、面肿、口眼歪斜、咬肌痉挛",
+        "coord_range": {"x_min": 0.30, "x_max": 0.38, "y_min": 0.20, "y_max": 0.26},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["牙痛", "面瘫"]
+    },
+    {
+        "name": "下关",
+        "location": "耳前方，颧弓下缘凹陷处",
+        "effect": "牙痛、耳鸣耳聋、面瘫、三叉神经痛",
+        "coord_range": {"x_min": 0.34, "x_max": 0.42, "y_min": 0.17, "y_max": 0.23},
+        "taboo": "无禁忌",
+        "body_part": "头面",
+        "symptom": ["牙痛", "耳鸣"]
+    },
+    {
+        "name": "膻中",
+        "location": "前正中线上，两乳头连线中点",
+        "effect": "胸闷气短、咳喘、心悸、乳少、呕吐",
+        "coord_range": {"x_min": 0.47, "x_max": 0.53, "y_min": 0.32, "y_max": 0.38},
+        "taboo": "无禁忌",
+        "body_part": "胸腹",
+        "symptom": ["胸闷心慌", "咳嗽气喘"]
+    }
+]

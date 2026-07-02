@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中医穴位按摩机器人智能决策系统</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei"}
+body{background:#f0f4f9;padding:24px}
+.container{max-width:1340px;margin:0 auto}
+.header-card{background:#222;color:#fff;padding:24px;border-radius:16px;text-align:center;margin-bottom:20px}
+.main-card{background:#fff;padding:26px;border-radius:16px}
+.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{border:1px solid #ddd;border-radius:12px;padding:16px;margin-bottom:16px}
+.panel-title{font-weight:bold;border-left:5px solid #165DFF;padding-left:10px;margin-bottom:12px}
+input,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px}
+.button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+button{padding:10px 16px;border:none;border-radius:6px;color:#fff}
+button:disabled{background:#bbbbbb}
+.btn-primary{background:#165DFF}
+.btn-orange{background:#FF7D00}
+.btn-green{background:#00B42A}
+.btn-zip{background:#722ED1}
+.code-box{width:100%;min-height:140px;background:#f7f8fa;padding:12px;border-radius:8px;white-space:pre-wrap;font-family:Consolas}
+.img-wrap{position:relative}
+.img-full{width:100%;border-radius:10px}
+#canvasLayer{position:absolute;left:0;top:0;width:100%;height:100%}
+.img-box{position:relative}
+#robotDot{width:16px;height:16px;background:red;border-radius:50%;position:absolute;display:none}
+.loading-mask{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.45);display:none;z-index:999}
+.log-pass{color:#096}
+.log-warn{color:#e69100}
+.log-error{color:red}
+/* 新增：密钥弹窗样式 */
+#keyModal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+.key-modal-box{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    width:480px;
+    box-sizing:border-box;
+}
+.key-modal-box h2{
+    margin-top:0;
+    color:#222;
+    font-size:20px;
+}
+.key-tip{
+    color:#666;
+    font-size:14px;
+    margin:8px 0 15px;
+}
+#qwenKeyInput{
+    width:100%;
+    padding:12px 10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+}
+#submitKeyBtn{
+    width:100%;
+    padding:12px;
+    background:#1677ff;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+<!-- ========== 新增：千问密钥输入弹窗 ========== -->
+<div id="keyModal">
+    <div class="key-modal-box">
+        <h2>请输入你的通义千问 API Key</h2>
+        <p class="key-tip">刷新页面后需要重新填写，密钥仅本次浏览器会话生效</p>
+        <input id="qwenKeyInput" type="text" placeholder="sk-xxxxxxxxxxxxxxxxxxxx">
+        <button id="submitKeyBtn" onclick="submitQwenKey()">确认提交密钥</button>
+    </div>
+</div>
+
+<div class="loading-mask" id="loadingMask">
+    <div style="color:#fff;text-align:center;padding-top:220px;font-size:18px"></div>
+</div>
+<div class="container">
+<div class="header-card"><h2>中医穴位按摩机器人智能决策系统</h2></div>
+<div class="main-card">
+<div class="two-grid">
+<div>
+<div class="panel">
+<div class="panel-title">步骤1 图像穴位识别</div>
+<input type="file" id="imgFile" accept="image/jpeg,image/png">
+<label>身高(cm)</label>
+<input type="number" id="heightVal" value="165">
+<label>健康禁忌</label>
+<select id="healthSel">
+<option value="无">身体健康</option>
+<option value="孕妇">孕妇</option>
+<option value="高血压">高血压</option>
+</select>
+<div class="button-row">
+<button class="btn-primary" id="runBtn">开始识别</button>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-title">原图穴位标注</div>
+<div class="img-wrap">
+<img class="img-full" id="previewImg">
+<canvas id="canvasLayer"></canvas>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-title">步骤2 辨证生成方案</div>
+<label>身体部位</label>
+<select id="partSel" disabled>
+<option value="">请选择部位</option>
+<option value="腰背">腰背</option>
+<option value="肩颈">肩颈</option>
+<option value="脾胃">脾胃</option>
+</select>
+<label>具体症状</label>
+<select id="symSel" disabled>
+<option value="">请先选择部位</option>
+</select>
+<label>严重程度</label>
+<select id="levelSel">
+<option>轻度</option>
+<option>中度</option>
+<option>重度</option>
+</select>
+<div class="button-row">
+<button class="btn-primary" id="filterBtn" disabled>生成理疗路线</button>
+<button class="btn-orange" id="playAnimBtn">播放机器人行走动画</button>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-title">机器人轨迹图</div>
+<div class="img-box">
+<img class="img-full" id="trajectoryImg">
+<div id="robotDot"></div>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-title">穴位权重热力图</div>
+<img class="img-full" id="heatmapImg">
+</div>
+
+<div class="panel">
+<div class="panel-title">数据导出</div>
+<div class="button-row">
+<button class="btn-green" id="downloadBtn">下载点位CSV</button>
+<button class="btn-zip" id="zipBtn">打包全部文件</button>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-title">历史穴位使用统计</div>
+<button class="btn-primary" id="loadStat">加载统计</button>
+<div class="code-box" id="statResult"></div>
+</div>
+</div>
+
+<div>
+<div class="panel">
+<div class="panel-title">大模型原始返回</div>
+<div class="code-box" id="qwenRawReply"></div>
+</div>
+<!-- 新增：调理方案展示面板 -->
+<div class="panel">
+<div class="panel-title">📋 本次辨证调理方案</div>
+<div style="margin:10px 0;">
+    <h4 style="margin-bottom:6px;font-size:14px;color:#165DFF;">方案简介</h4>
+    <p id="plan-desc" style="color:#333;line-height:1.6;"></p>
+</div>
+<div style="margin:12px 0;">
+    <h4 style="margin-bottom:6px;font-size:14px;color:#165DFF;">详细调理说明</h4>
+    <p id="plan-detail" style="color:#555;line-height:1.6;"></p>
+</div>
+<div style="margin:12px 0;">
+    <h4 style="margin-bottom:6px;font-size:14px;color:#165DFF;">推荐按摩顺序</h4>
+    <p id="plan-order" style="color:#0066cc;line-height:1.6;"></p>
+</div>
+<div style="margin:12px 0;">
+    <h4 style="margin-bottom:6px;font-size:14px;color:#165DFF;">方案包含穴位</h4>
+    <p id="plan-points" style="color:#666;line-height:1.6;"></p>
+</div>
+</div>
+<div class="panel">
+<div class="panel-title">系统运行日志</div>
+<div class="code-box" id="agentLog"></div>
+</div>
+<div class="panel">
+<div class="panel-title">穴位置信度校验</div>
+<div class="code-box" id="checkLog"></div>
+</div>
+<div class="panel">
+<div class="panel-title">机器人任务序列</div>
+<div class="code-box" id="resultText"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+// ===================== 密钥弹窗全局变量与修复后函数 =====================
+const keyModal = document.getElementById("keyModal");
+
+// 页面加载第一步：调用后端清空Cookie接口，再校验密钥
+document.addEventListener("DOMContentLoaded", async function(){
+    await fetch("/api/clear_key", {method:"POST"});
+    const res = await fetch("/api/check_key");
+    const data = await res.json();
+    if(data.has_key){
+        keyModal.style.display = "none";
+    }else{
+        keyModal.style.display = "flex";
+    }
+})
+
+// 提交密钥：增加完整异常捕获，解决500报错无提示问题
+async function submitQwenKey(){
+    const inputDom = document.getElementById("qwenKeyInput");
+    const keyVal = inputDom.value.trim();
+    if(!keyVal){
+        alert("请输入通义千问API密钥！");
+        return;
+    }
+    try{
+        const resp = await fetch("/api/set_qwen_key", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({api_key: keyVal})
+        });
+        if(!resp.ok){
+            const errText = await resp.text();
+            alert("服务请求异常：" + errText);
+            return;
+        }
+        const ret = await resp.json();
+        alert(ret.msg);
+        // 提交成功直接隐藏弹窗，不刷新页面
+        keyModal.style.display = "none";
+    }catch(err){
+        alert("接口请求失败，请确认后端服务正常启动");
+        console.error("密钥提交报错：", err);
+    }
+}
+// ========================================================================
+
+const partMap = {
+    "腰背":["久坐僵硬","腰肌酸痛"],
+    "肩颈":["僵硬落枕","肩周酸痛"],
+    "脾胃":["胃胀胃痛","消化不良"]
+};
+let partSel = document.getElementById("partSel");
+let symSel = document.getElementById("symSel");
+
+partSel.onchange = function(){
+    symSel.innerHTML = "<option value=''>请选择具体症状</option>";
+    const arr = partMap[this.value] || [];
+    arr.forEach(txt=>{
+        let opt = document.createElement("option");
+        opt.textContent = txt;
+        opt.value = txt;
+        symSel.appendChild(opt);
+    })
+    symSel.value = "";
+}
+
+function setLoadingText(text){
+    document.querySelector(".loading-mask div").innerText = text;
+}
+
+function clearLog(){
+    document.getElementById("agentLog").innerText = "";
+}
+
+function writeLog(text){
+    const logBox = document.getElementById("agentLog");
+    const time = new Date().toLocaleTimeString();
+    logBox.innerText += `[${time}] ${text}\n`;
+}
+
+const canvas = document.getElementById("canvasLayer");
+const ctx = canvas.getContext("2d");
+const loading = document.getElementById("loadingMask");
+
+let fullPoints = [];
+let robotTasks = [];
+let realW = 0;
+let realH = 0;
+let fileId = "";
+
+document.getElementById("imgFile").onchange = function(e){
+    const file = e.target.files[0];
+    if(!file)return;
+    const reader = new FileReader();
+    reader.onload = ev=>{
+        document.getElementById("previewImg").src = ev.target.result;
+    }
+    reader.readAsDataURL(file);
+}
+
+document.getElementById("runBtn").onclick = async function(){
+    const file = document.getElementById("imgFile").files[0];
+    if(!file){alert("请先选择图片！");return;}
+
+    clearLog();
+    setLoadingText("正在调用视觉大模型识别人体穴位");
+    loading.style.display = "block";
+
+    const fd = new FormData();
+    fd.append("file", file);
+    fd.append("height", document.getElementById("heightVal").value);
+    fd.append("health_condition", document.getElementById("healthSel").value);
+
+    const res = await fetch("/api/image-rec", {method:"POST", body:fd});
+    const data = await res.json();
+    loading.style.display = "none";
+    if(data.error){alert(data.error);return;}
+
+    document.getElementById("filterBtn").disabled = false;
+    partSel.disabled = false;
+    symSel.disabled = false;
+
+    fullPoints = data.points;
+    robotTasks = data.robot_task;
+    realW = data.img_width;
+    realH = data.img_height;
+    fileId = data.img_file_id;
+
+    document.getElementById("qwenRawReply").innerText = JSON.stringify(data.qwen_raw_reply,null,2);
+    document.getElementById("resultText").innerText = JSON.stringify(robotTasks,null,2);
+    document.getElementById("trajectoryImg").src = data.trajectory_img;
+    document.getElementById("heatmapImg").src = data.heatmap_img;
+
+    writeLog(`图片解析完成，分辨率：${realW} × ${realH}`);
+    writeLog(`成功识别穴位数量：${fullPoints.length} 个`);
+    writeLog(`已自动过滤禁忌人群：${document.getElementById("healthSel").value}`);
+
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    fullPoints.forEach((p,i)=>{
+        const px = p.x * canvas.width;
+        const py = p.y * canvas.height;
+        ctx.beginPath();
+        ctx.arc(px,py,7,0,Math.PI*2);
+        ctx.fillStyle="#f22";
+        ctx.fill();
+        ctx.fillText(i+1, px+10, py+5);
+    })
+}
+
+document.getElementById("filterBtn").onclick = async function(){
+    const symptom = symSel.value.trim();
+    if(!symptom){
+        alert("请选择具体症状！");
+        return;
+    }
+
+    setLoadingText("正在进行穴位辨证筛选与路径规划");
+    loading.style.display = "block";
+
+    const fd = new FormData();
+    fd.append("all_points_json", JSON.stringify(fullPoints));
+    fd.append("img_file_id", fileId);
+    fd.append("img_w", realW);
+    fd.append("img_h", realH);
+    fd.append("part", partSel.value);
+    fd.append("symptom", symSel.value);
+    fd.append("level", document.getElementById("levelSel").value);
+    fd.append("condition", document.getElementById("healthSel").value);
+
+    const res = await fetch("/api/filter-by-symptom", {method:"POST", body:fd});
+    const data = await res.json();
+    loading.style.display = "none";
+    if(data.error){alert(data.error);return;}
+
+    robotTasks = data.robot_task;
+    document.getElementById("resultText").innerText = JSON.stringify(robotTasks,null,2);
+    document.getElementById("trajectoryImg").src = data.trajectory_img;
+    document.getElementById("heatmapImg").src = data.heatmap_img;
+
+    // ========== 新增：渲染后端返回的调理方案 ==========
+    document.getElementById("plan-desc").innerText = data.plan_description || "暂无简介";
+    document.getElementById("plan-detail").innerText = data.plan_detail || "暂无详细说明";
+    document.getElementById("plan-order").innerText = (data.plan_order || []).join(" → ");
+    document.getElementById("plan-points").innerText = (data.plan_all_points || []).join("、");
+    // =================================================
+
+    writeLog(`辨证条件：部位【${partSel.value}】，症状【${symptom}】，等级【${document.getElementById("levelSel").value}】`);
+    writeLog(`优化后按摩点位共 ${robotTasks.length} 个，已生成TSP最优行走路线`);
+}
+
+document.getElementById("playAnimBtn").onclick = async function(){
+    if(robotTasks.length===0){alert("请先生成路线");return;}
+    const dot = document.getElementById("robotDot");
+    const img = document.getElementById("trajectoryImg");
+    const w = img.offsetWidth;
+    const h = img.offsetHeight;
+    dot.style.display = "block";
+
+    for(let item of robotTasks){
+        // 兼容后端 point_name 字段，避免读取不存在的 name 抛错弹窗
+        let pointName = item.point_name ?? "未知穴位";
+        let px = item.norm_x * w - dot.offsetWidth / 2;
+        let py = item.norm_y * h - dot.offsetHeight / 2;
+        dot.style.left = px + "px";
+        dot.style.top = py + "px";
+        await new Promise(r=>setTimeout(r, item.massage_seconds * 900));
+    }
+    setTimeout(()=>dot.style.display="none", 600);
+}
+
+document.getElementById("downloadBtn").onclick = ()=>window.open("/download-csv");
+document.getElementById("zipBtn").onclick = ()=>window.open("/download-all");
+
+document.getElementById("loadStat").onclick = async ()=>{
+    const res = await fetch("/api/stat-data");
+    const json = await res.json();
+    document.getElementById("statResult").innerText = JSON.stringify(json.frequency_count,null,2);
+}
+</script>
+</body>
+</html>
